@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="icon" href="original.png" type="png">
+    <style>
+        body{
+            background: #0D1B2A;
+            background: linear-gradient(90deg, rgba(13, 27, 42, 1) 0%, rgba(27, 38, 59, 1) 100%);
+            margin: 0;
+        }
+        .navbar-nav{
+            margin-left: 450px;
+            gap: 20px;
+            
+        }
+        .nav-link{
+            font-size: 20px;
+            color: #E0E1DD;
+            font-weight:750;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        .customnav{
+            width: 100vw;
+            background-color: #415A77;
+            position: fixed;
+            top: 0;
+
+        }
+        .x{
+            font-size: 20px;
+            color: #E0E1DD;
+            font-weight:750;
+            margin-left: 20px;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        
+        .nav-link:hover{
+            background-color: #0D1B2A;
+            color:#E0E1DD ;
+            border-radius: 10px;
+        }
+        .mxd{
+            margin-left: 450px;
+            color: black;
+        }
+        .sidebar{
+            width: 180px;
+            background-color: #415A77;
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            margin: 0;
+            margin-top: 90px;
+            font-size: 0.8em;
+        }
+        .sidebar ul{
+            width: 100%;
+            list-style-type: none;
+            padding:10px;
+            margin: 0;
+        }
+        .sidebar li{
+            color: #E0E1DD;
+            font-size: 1.25em;
+            margin-top: 20px;
+        }
+
+        .sidebar a{
+            text-decoration: none;
+            color: #E0E1DD;
+        }
+
+        .sidebar li:hover{
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .searchbar{
+            width: 500px;
+        }
+
+        .sidebar li:hover{
+            background-color: #162331;
+        }
+        .cbg{
+            background-color: #E0E1DD;
+            width: 800px;
+            
+        }
+        .xbd{
+            margin-top: 200px;
+            margin-left: 200px;
+            display: flex;
+            gap: 20px;
+        }
+        
+        .card{
+            padding: 20px;
+            display: flex;
+            flex-direction: row;
+            width: 500px;
+        }
+        .card p{
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+  
+
+   <nav class="navbar navbar-expand-lg customnav">
+  <div class="container-fluid">
+    <img src="original.png" alt="Bootstrap" width="100" height="100">
+    <p class="d-inline-block mt-4 align-text-top fw-bold x">Cielito Hood Forum</p>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <input class="form-control me-2 searchbar" type="search" placeholder="Search" aria-label="Search">
+        <li class="mxd">
+            <a class="nav-link" href="index.html">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="x">
+    <div class="sidebar">
+        <ul>
+            <li> <a href="forumpage.html">Home</a></li>
+            <li><a href="popular.html">Popular Forum</a></li>
+            <li><a href="">Explore Forums</a></li>
+            <li><a href="">Create Forum</a></li>
+        </ul>
+    </div>
+    
+        <div class="cardsection xbd">
+            <div class="card anu">
+                <img src="car1.jpg" class="card-img-left" alt="..." width="200rem">
+                <div class="card-body">
+                  <h3 class="card-title fw-bold">Parking</h3>
+                  <p>park ka d2</p>
+                  <a href="parkingforum.html" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+              
+              <div class="card anu">
+                <img src="wonderpets.jpg" class="card-img-left" alt="..." width="200rem">
+                <div class="card-body">
+                  <h3 class="card-title fw-bold">Pets</h3>
+                  <p>park ka d2</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+
+              <div class="card anu">
+                <img src="car1.jpg" class="card-img-left" alt="..." width="200rem">
+                <div class="card-body">
+                  <h3 class="card-title fw-bold">Kapitbahay</h3>
+                  <p>park ka d2</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+        </div>
+    
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+</body>
+</html>
