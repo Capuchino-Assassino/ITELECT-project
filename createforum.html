@@ -15,6 +15,7 @@
         .navbar-nav{
             margin-left: 450px;
             gap: 20px;
+            z-index: 100;
             
         }
         .nav-link{
@@ -29,6 +30,7 @@
             background-color: #415A77;
             position: fixed;
             top: 0;
+             z-index: 100;
 
         }
         .x{
@@ -130,6 +132,12 @@
             display: flex;
             flex-direction: column;
         }
+        .create{
+            width: 1600px;
+            margin-top: 150px;
+            margin-left: 200px;
+            background-color: #E0E1DD;
+        }
     </style>
 </head>
 <body>
@@ -163,17 +171,30 @@
         </ul>
     </div>
     
+    <div class="create p-3 rounded">
+        <h4 class="text-black">Create New Forum</h4>
+        <form id="forumForm">
+            <div class="mb-2">
+                <input type="text" id="forumTitle" class="form-control" placeholder="Forum Title" required>
+            </div>
+             <div class="mb-2">
+                <input type="text" id="forumDesc" class="form-control" placeholder="Forum Description" required>
+            </div>
+            <button type="submit" class="btn btn-dark">Create Form</button>
+
+        </form>
+    </div>
         <div class="cardsection xbd">
             <div class="card" style="width: 100rem;">
                 <img src="car1.jpg" class="card-img-left" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">Jolina</h5>
                   <p class="card-text">Sumbong mo dito mga bobo mag park</p>
-                  <a href="#" class="btn btn-primary xbb" onclick="viewcomment()">See Comments</a>
+                  <a href="parkingforum.html" class="btn btn-primary xbb" onclick="viewcomment()">See Comments</a>
                 </div>
               </div>
 
-              <div class="card commens d-none" style="width: 100rem;" id="viewCom">
+              <div class="card commens d-none" style="width: 100rem;" id="comment">
                 <p> <h4>COMMENTS:</H4></p>
                     <br>
                     <p><b>Larry:</b> Wow ang ganda</p>
@@ -190,31 +211,34 @@
 </div>
 <script>
 
-     function viewcomment() {
-        var comment = document.getElementById("viewCom");
-        comment.classList.toggle("d-none")
-    }
-    function getTask(){
-                const input = document.getElementById("taskInput");
-                const taskText = input.value.trim();
+   document.getElementById("forumForm").addEventListener("submit",function(event){
+    event.preventDefault();
 
-                if(taskText === ""){
-                    alert("Please Enter a Task!!");
-                    return;
-                }
-                const li = document.createElement("li");
-                li.className = "list-group-item d-flex justify-content-between align-items-center mt-2";
-                li.innerHTML = `<span><b>YOU: </b> ${taskText}</span>
-                <button class="btn btn-sm btn-success xd" onclick="markDone(this)"> DELETE </button>`;
+    const title = document.getElementById("forumTitle").value.trim();
+    const desc = document.getElementById("forumDesc").value.trim();
 
-                document.getElementById("taskList").appendChild(li);
-                input.value="";
-            }
+    if(!title || !desc)return;
 
-            function markDone(button){
-                const task =button.parentElement;
-                task.classList.toggle("d-none");
-            }
+    const newCard = document.createElement("div");
+    newCard.className = "card mt-3";
+    newCard.style.width ="97.15%";
+    newCard.innerHTML = `
+    <img src="" class="card-img-left" alt="...">
+    <div class = "card-body">
+        <h3 class="card-title">${title}</h3>
+        <p class="card-text">${desc}</p>
+        <button class="btn btn-danger rightsd" onclick="deleteForum(this)">Delete Forum</button>
+    </div>
+    `;    
+    document.querySelector(".cardsection").appendChild(newCard);
+    document.getElementById("forumForm").reset();
+   });
+
+   function deleteForum(button) {
+        const card = button.parentElement.parentElement;
+        card.remove();
+   }
+    
 </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
 </body>
